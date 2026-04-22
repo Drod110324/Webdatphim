@@ -1,265 +1,117 @@
-/* ============================================================ */
-/* CINESTAR HOME PAGE STYLE - TOÀN BỘ CSS CHO TRANG CHỦ          */
-/* ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root {
-    --bg-color: #0f1035;
-    --purple-main: #4b2082;
-    --purple-light: #6b30b0;
-    --yellow-main: #f3ea28;
-    --text-white: #ffffff;
-    --text-gray: #b0b0b0;
-    --glass: rgba(255, 255, 255, 0.08);
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+    --primary-color: #eaff00;
+    --header-bg-color: #0b1121;
+    --main-bg-color: #06050a;
+    --border-color: #333;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-white);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg-color);
+    color: white;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header & Promo Bar */
-.top-promo {
-    background: linear-gradient(90deg, var(--purple-main), #6b30b0);
-    padding: 8px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.btn-open {
-    background: white;
-    color: var(--purple-main);
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-header {
-    background-color: var(--bg-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.header-main {
+.header {
+    background-color: var(--header-bg-color);
+    padding: 15px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
 }
 
-.logo img { height: 40px; }
-
-.header-actions { display: flex; gap: 10px; }
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-.btn-yellow {
-    background-color: var(--yellow-main);
-    color: #000;
-    box-shadow: 0 4px 15px rgba(243, 234, 40, 0.2);
-}
-
-.btn-yellow:hover {
-    background-color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(243, 234, 40, 0.4);
-}
-
-.btn-purple {
-    background-color: var(--purple-main);
-    color: #fff;
-}
-
-.search-box {
-    position: relative;
-    width: 250px;
-}
-
-.search-box input {
+.header-container {
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 10px 15px 10px 40px;
-    border-radius: 20px;
-    border: 1px solid var(--glass);
-    background: var(--glass);
-    color: #fff;
-    outline: none;
+    justify-content: space-between;
 }
 
-.search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
+.header-logo {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 5px 15px;
+    width: 300px;
+}
+
+.header-search input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.header-search input::placeholder {
+    color: #94a3b8;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .header-nav {
-    background: rgba(255, 255, 255, 0.05);
-    border-top: 1px solid var(--glass);
-}
-
-.nav-row {
     display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-}
-
-.nav-row a {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-right: 20px;
-    transition: var(--transition);
-}
-
-.nav-row a:hover { color: var(--yellow-main); }
-
-/* Hero Banner */
-.hero {
-    position: relative;
-    height: 550px;
-}
-
-.banner img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
-}
-
-.booking-bar {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(15, 16, 53, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 20px 40px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid var(--glass);
-}
-
-.select-group { display: flex; gap: 10px; }
-
-.select-group select {
-    padding: 12px;
-    background: var(--glass);
-    color: #fff;
-    border: 1px solid var(--glass);
-    border-radius: 6px;
-    width: 160px;
-    cursor: pointer;
-}
-
-/* Movie List */
-.movies { padding: 60px 0; }
-
-.section-title {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    color: var(--text-gray);
-    cursor: pointer;
-    font-size: 1.6rem;
-    transition: var(--transition);
-}
-
-.section-title h2.active {
-    color: #fff;
-    border-bottom: 4px solid var(--purple-main);
-    padding-bottom: 5px;
-}
-
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
 }
 
-.movie-card { transition: var(--transition); }
-
-.poster {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 380px;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
 }
 
-.poster img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
+.nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
-.movie-card:hover .poster img { transform: scale(1.1); }
-
-.poster-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: var(--transition);
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.movie-card:hover .poster-overlay { opacity: 1; }
-
-.btn-primary {
-    background-color: var(--purple-main);
-    color: #fff;
-    padding: 12px 30px;
+.bell-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-/* Footer */
+.login-btn {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 footer {
-    background: #08081a;
-    padding: 80px 0 30px;
-    border-top: 1px solid var(--glass);
+    background-color: #06050a;
+    padding: 80px 0 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
 }
