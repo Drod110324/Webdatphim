@@ -1,13 +1,393 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết phim - Cinestar</title>
-    <link rel="stylesheet" href="./MovieDetail/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Layout giống Cinestar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom,#08122e,#191970);
+    color:white;
+}
+
+/* Top Banner */
+.top-banner{
+    background:#d9d9d9;
+    color:#222;
+    text-align:center;
+    padding:12px;
+}
+
+/* Header */
+header{
+    background:#07152f;
+    padding:20px 8%;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:35px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.logo span{
+    color:#ffcc00;
+}
+
+.nav-menu{
+    display:flex;
+    gap:30px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.right-box{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    background:#6c42ff;
+    border:none;
+    padding:10px 18px;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.btn-yellow{
+    background:#f2d000;
+    color:black;
+}
+
+/* Secondary menu */
+.submenu{
+    display:flex;
+    gap:30px;
+    margin-top:20px;
+}
+
+.submenu a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+/* Banner Slider */
+.hero{
+    width:80%;
+    height:320px;
+    background:linear-gradient(to right,#8b0000,#d72626);
+    margin:30px auto;
+    border-radius:8px;
+    position:relative;
+    padding:40px;
+}
+
+.hero h1{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:30px;
+}
+
+.movie-strip{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.poster{
+    width:120px;
+    height:180px;
+    background:#eee;
+    border:4px solid white;
+    border-radius:8px;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    cursor:pointer;
+}
+
+.left-arrow{
+    left:-40px;
+}
+.right-arrow{
+    right:-40px;
+}
+
+/* Quick booking */
+.booking{
+    width:80%;
+    background:#ddd;
+    margin:auto;
+    padding:25px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.booking h2{
+    color:#333;
+}
+
+.select-box{
+    flex:1;
+    background:white;
+    color:#444;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+}
+
+/* Now showing */
+.section-title{
+    text-align:center;
+    margin:60px 0 40px;
+    font-size:50px;
+    font-weight:bold;
+}
+
+.movies{
+    width:80%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding-bottom:60px;
+}
+
+.movie-card{
+    background:#101a4b;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.movie-image{
+    height:300px;
+    background:gray;
+}
+
+.movie-info{
+    padding:20px;
+}
+
+.movie-info h3{
+    margin-bottom:10px;
+}
+
+.movie-info p{
+    color:#bbb;
+}
+
+/* Footer */
+footer{
+    background:#050d22;
+    padding:50px 8%;
+    margin-top:40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.footer-box h4{
+    margin-bottom:15px;
+}
+
+.footer-box p{
+    color:#aaa;
+    margin:6px 0;
+}
+
+/* Responsive */
+@media(max-width:1000px){
+    .movies{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .booking{
+        flex-wrap:wrap;
+    }
+
+    .nav-menu{
+        display:none;
+    }
+}
+
+@media(max-width:700px){
+    .movies{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .movie-strip{
+        flex-wrap:wrap;
+    }
+}
+</style>
+
 </head>
 <body>
-    <header><h1>Trang Chi tiết phim (Member 3)</h1></header>
-    <main><p>Thông tin chi tiết phim đang được cập nhật...</p></main>
+
+<div class="top-banner">
+    Tải ứng dụng Cinema - Tra cứu lịch chiếu và đặt vé nhanh
+</div>
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <span>★</span> CINESTAR
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#">Khuyến mãi</a>
+            <a href="#">Sự kiện</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Giới thiệu</a>
+        </nav>
+
+        <div class="right-box">
+            <button class="btn btn-yellow">Đặt vé ngay</button>
+            <button class="btn">Đồ ăn nước</button>
+        </div>
+    </div>
+
+    <div class="submenu">
+        <a href="#">Chọn rạp</a>
+        <a href="#">Lịch chiếu</a>
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="arrow left-arrow">&#10094;</div>
+    <div class="arrow right-arrow">&#10095;</div>
+
+    <h1>PHIM HOT MÙA LỄ</h1>
+
+    <div class="movie-strip">
+        <div class="poster"></div>
+        <div class="poster"></div>
+        <div class="poster"></div>
+        <div class="poster"></div>
+        <div class="poster"></div>
+        <div class="poster"></div>
+    </div>
+</section>
+
+
+<section class="booking">
+    <h2>ĐẶT VÉ NHANH</h2>
+
+    <div class="select-box">1. Chọn Rạp</div>
+    <div class="select-box">2. Chọn Phim</div>
+    <div class="select-box">3. Chọn Ngày</div>
+    <div class="select-box">4. Chọn Suất</div>
+
+    <button class="btn">ĐẶT NGAY</button>
+</section>
+
+
+<h2 class="section-title">PHIM ĐANG CHIẾU</h2>
+
+<section class="movies">
+
+<div class="movie-card">
+    <div class="movie-image"></div>
+    <div class="movie-info">
+        <h3>Tên phim 1</h3>
+        <p>Thể loại / Thời lượng</p>
+    </div>
+</div>
+
+<div class="movie-card">
+    <div class="movie-image"></div>
+    <div class="movie-info">
+        <h3>Tên phim 2</h3>
+        <p>Thể loại / Thời lượng</p>
+    </div>
+</div>
+
+<div class="movie-card">
+    <div class="movie-image"></div>
+    <div class="movie-info">
+        <h3>Tên phim 3</h3>
+        <p>Thể loại / Thời lượng</p>
+    </div>
+</div>
+
+<div class="movie-card">
+    <div class="movie-image"></div>
+    <div class="movie-info">
+        <h3>Tên phim 4</h3>
+        <p>Thể loại / Thời lượng</p>
+    </div>
+</div>
+
+</section>
+
+
+<footer>
+<div class="footer-grid">
+
+<div class="footer-box">
+<h4>Giới thiệu</h4>
+<p>Về chúng tôi</p>
+<p>Hệ thống rạp</p>
+<p>Tuyển dụng</p>
+</div>
+
+<div class="footer-box">
+<h4>Hỗ trợ</h4>
+<p>Liên hệ</p>
+<p>FAQ</p>
+<p>Điều khoản</p>
+</div>
+
+<div class="footer-box">
+<h4>Thành viên</h4>
+<p>Đăng ký</p>
+<p>Đăng nhập</p>
+</div>
+
+<div class="footer-box">
+<h4>Kết nối</h4>
+<p>Facebook</p>
+<p>Instagram</p>
+<p>Youtube</p>
+</div>
+
+</div>
+</footer>
+
 </body>
 </html>
