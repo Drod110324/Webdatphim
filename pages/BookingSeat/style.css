@@ -1,23 +1,504 @@
-/* ============================================================ */
-/* CINESTAR BOOKING SEAT - CSS CHO TRANG CHỌN GHẾ               */
-/* ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
+/* ---- Design Tokens ---- */
 :root {
-    --bg-color: #0f1035;
-    --purple-main: #4b2082;
-    --yellow-main: #f3ea28;
-    --seat-regular: #ffffff;
-    --seat-vip: #4b2082;
-    --seat-couple: #ff69b4;
+    --primary-color: #eaff00;
+    --primary-hover: #d4e600;
+    --primary-glow: rgba(234, 255, 0, 0.15);
+    --primary-dim: rgba(234, 255, 0, 0.6);
+    --header-bg-color: #0b1121;
+    --main-bg-color: #06050a;
+    --border-color: #333;
+
+    /* Extended palette */
+    --surface-1: #0d0c14;
+    --surface-2: #13111f;
+    --surface-3: #1a1828;
+    --surface-card: #100f1a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #8a8a9a;
+    --text-muted: #55556a;
+
+    /* Functional */
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(234, 255, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.15s ease;
+}
+
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--main-bg-color);
+    color: var(--text-primary);
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+
+/* ============================================================ */
+/* HEADER                                                        */
+/* ============================================================ */
+
+.header {
+    background-color: var(--header-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.header-logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+/* Search */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-search input {
+    background: var(--surface-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 6px 14px;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-family: inherit;
+    outline: none;
+    transition: var(--transition);
+}
+
+.header-search input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.search-btn {
+    color: var(--text-secondary);
+    padding: 6px;
+}
+
+.search-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bell-btn {
+    color: var(--text-secondary);
+    padding: 4px;
+}
+
+.bell-btn:hover {
+    color: var(--primary-color);
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.login-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+
+/* ============================================================ */
+/* PROGRESS BAR                                                  */
+/* ============================================================ */
+
+.progress-bar-section {
+    background: var(--surface-1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 24px 32px;
+}
+
+.progress-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.progress-track {
+    position: absolute;
+    top: 18px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: var(--border-color);
+    z-index: 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-color);
+    transition: width 0.6s ease;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+.step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.step.active .step-circle {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--main-bg-color);
+    box-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(234, 255, 0, 0.06);
+}
+
+.step.completed .step-circle {
+    background: var(--primary-dim);
+    border-color: var(--primary-dim);
+    color: var(--main-bg-color);
+}
+
+.step-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+
+/* ============================================================ */
+/* MAIN BOOKING LAYOUT                                           */
+/* ============================================================ */
+
+.booking-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 0;
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: calc(100vh - 64px - 88px);
+}
+
+
+/* ============================================================ */
+/* SEAT SECTION (LEFT)                                           */
+/* ============================================================ */
+
+.seat-section {
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Showtime Info Bar */
+.showtime-info {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    margin-bottom: 36px;
+}
+
+.showtime-movie h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.showtime-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-age {
+    background: var(--danger);
     color: #fff;
-    font-family: 'Inter', sans-serif;
+}
+
+.tag-format {
+    background: rgba(234, 255, 0, 0.15);
+    color: var(--primary-color);
+    border: 1px solid rgba(234, 255, 0, 0.2);
+}
+
+
+/* ---- SEAT INFO & PRICE BOXES ---- */
+
+.seat-info-box,
+.price-box {
+    width: 100%;
+    max-width: 720px;
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    background: var(--surface-2);
+    margin-bottom: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.seat-info-box {
+    min-height: 180px;
+    animation-delay: 0.1s;
+}
+
+.price-box {
+    min-height: 120px;
+    animation-delay: 0.2s;
+}
+
+.box-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.seat-info-content,
+.price-content {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* ============================================================ */
+/* ORDER SUMMARY SIDEBAR (RIGHT)                                 */
+/* ============================================================ */
+
+.order-summary {
+    background: var(--surface-1);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-card {
+    position: sticky;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.summary-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.summary-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+
+/* ============================================================ */
+/* FOOTER                                                        */
+/* ============================================================ */
+
+#main-footer {
+    background: var(--header-bg-color);
+    border-top: 1px solid var(--border-color);
+    padding: 20px 32px;
     text-align: center;
 }
 
-h1 { margin-top: 50px; color: var(--yellow-main); }
+.footer-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+#main-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+
+
+/* ============================================================ */
+/* SCROLLBAR CUSTOM                                              */
+/* ============================================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
