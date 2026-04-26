@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách phim - Cinestar</title>
-    <link rel="stylesheet" href="./Movies/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Trang Danh sách phim (Member 2)</h1>
-        <nav><a href="./HomePage/index.html">Về trang chủ</a></nav>
+        <h1>Phim Điện Ảnh </h1>
+        <nav><a href="../HomePage/index.html">Về trang chủ</a></nav>
+        <a href="#" class="btn-book-ticket">
+            <svg class="ticket-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                <path d="M12 9.5l1 2 2 .5-1.5 1.5.5 2-2-1-2 1 .5-2-1.5-1.5 2-.5z"></path>
+            </svg>
+            ĐẶT VÉ NGAY
+        </a>
     </header>
+
     <main>
-        <p>Giao diện danh sách phim đang được phát triển...</p>
+        <div class="movie-tabs">
+            <button class="tab-btn active" data-target="now-showing">Đang chiếu</button>
+            <button class="tab-btn" data-target="coming-soon">Sắp chiếu</button>
+            <button class="tab-btn" data-target="early-screening">Suất chiếu sớm</button>
+        </div>
+
+
     </main>
+
+    <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
