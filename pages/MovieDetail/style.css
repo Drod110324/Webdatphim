@@ -1,25 +1,293 @@
-/* ============================================================ */
-/* CINESTAR MOVIE DETAIL - CSS CHO TRANG CHI TIẾT PHIM           */
-/* ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
-:root {
-    --bg-color: #0f1035;
-    --purple-main: #4b2082;
-    --yellow-main: #f3ea28;
-    --text-white: #ffffff;
-    --text-gray: #b0b0b0;
-    --glass: rgba(255, 255, 255, 0.08);
-}
-
 body {
-    background-color: var(--bg-color);
-    color: var(--text-white);
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg-color, #06050a);
+    color: #fff;
     margin: 0;
 }
 
-header { padding: 40px; text-align: center; background: rgba(0,0,0,0.3); }
-h1 { color: var(--yellow-main); }
-main { padding: 50px; max-width: 1000px; margin: 0 auto; }
+/* Movie Banner */
+.movie-banner {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: #111827 center/cover no-repeat; /* Thay ảnh background ở đây */
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(6, 5, 10, 1) 10%, rgba(6, 5, 10, 0.7) 50%, rgba(6, 5, 10, 0.2) 100%);
+    z-index: 1;
+}
+
+.movie-info-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.movie-poster img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 2px solid #333;
+}
+
+.movie-details {
+    max-width: 700px;
+}
+
+.movie-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color, #eaff00);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+.movie-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--primary-color, #eaff00);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #d4e600;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color, #eaff00);
+    border: 2px solid var(--primary-color, #eaff00);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color, #eaff00);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Movie Content Layout */
+.movie-content-section {
+    padding: 60px 0;
+}
+
+.content-layout {
+    display: flex;
+    gap: 40px;
+}
+
+.main-column {
+    flex: 2;
+}
+
+.sidebar-column {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color, #eaff00);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Showtimes specific */
+.showtime-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.date-tab {
+    background: #1e293b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.date-tab.active, .date-tab:hover {
+    background: var(--primary-color, #eaff00);
+    color: #000;
+    border-color: var(--primary-color, #eaff00);
+}
+
+.date-tab .day {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.date-tab .date {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cinema-block {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.cinema-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.time-slot {
+    background: transparent;
+    border: 1px solid #64748b;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.time-slot:hover {
+    background: var(--primary-color, #eaff00);
+    color: #000;
+    border-color: var(--primary-color, #eaff00);
+}
+
+/* Cast and Crew */
+.cast-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.cast-item {
+    text-align: center;
+    width: 100px;
+}
+
+.cast-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+}
+
+/* Related Movies */
+.related-movies {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.related-movie-card {
+    display: flex;
+    gap: 15px;
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+}
+
+.related-movie-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color, #eaff00);
+}
+
+.related-movie-card img {
+    width: 80px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.related-info h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.related-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+@media (max-width: 992px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    .movie-info-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .action-btns {
+        justify-content: center;
+    }
+}

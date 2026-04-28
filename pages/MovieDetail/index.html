@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết phim - Cinestar</title>
-    <link rel="stylesheet" href="./MovieDetail/style.css">
+    <title>Chi tiết phim - WebDatPhim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../HomePage/style.css">
 </head>
 <body>
+
     <header class="header">
         <div class="header-container">
             <a href="../HomePage/index.html" class="header-logo" style="text-decoration: none;">DATPHIM</a>
@@ -44,6 +46,32 @@
             </div>
         </div>
     </header>
-    <main><p>Thông tin chi tiết phim đang được cập nhật...</p></main>
+
+    <main class="main-content">
+        <section class="movie-banner">
+            <div class="banner-overlay"></div>
+            <div class="container movie-info-wrapper">
+                <div class="movie-poster">
+                    <img src="https://via.placeholder.com/300x450" alt="Poster phim">
+                </div>
+                <div class="movie-details">
+                    <h1 class="movie-title">Tên Phim </h1>
+                    <div class="movie-meta">
+                        <span class="genre">Thể loại</span>
+                        <span class="duration">120 phút</span>
+                        <span class="rating">⭐ 9.5</span>
+                    </div>
+                    <p class="description">
+                        Chi tiết phim
+                    </p>
+                    <div class="action-btns">
+                        <button class="btn btn-primary">Đặt Vé Ngay</button>
+                        <button class="btn btn-outline">Xem Trailer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
