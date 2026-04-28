@@ -116,7 +116,6 @@ footer {
     margin-top: 50px;
 }
 
-/* === Bố cục chung (Khung container) === */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -127,7 +126,6 @@ footer {
     padding: 40px 0;
 }
 
-/* === Khung Slider === */
 .silder {
     width: 100%;
     height: 400px;
@@ -141,7 +139,6 @@ footer {
     text-transform: uppercase;
 }
 
-/* === Khung Đặt Vé Nhanh === */
 .quick-booking-wrapper {
     max-width: 1000px;
     margin: -30px auto 40px;
@@ -155,7 +152,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* === Khung Tiêu đề Section === */
 .section-head {
     display: flex;
     justify-content: space-between;
@@ -182,14 +178,12 @@ footer {
     border-bottom: 2px solid var(--primary-color);
 }
 
-/* === Khung Danh sách Phim === */
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 25px;
 }
 
-/* === Khung Thẻ Phim === */
 .movie-card {
     height: 320px;
     border: 1px solid var(--border-color);

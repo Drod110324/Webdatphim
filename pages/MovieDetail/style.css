@@ -1,16 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--main-bg-color, #06050a);
     color: #fff;
     margin: 0;
 }
 
-/* Movie Banner */
 .movie-banner {
     position: relative;
     width: 100%;
     min-height: 500px;
-    background: #111827 center/cover no-repeat; /* Thay ảnh background ở đây */
+    background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 50px 0;
@@ -114,7 +116,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Movie Content Layout */
 .movie-content-section {
     padding: 60px 0;
 }
@@ -141,7 +142,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Showtimes specific */
 .showtime-tabs {
     display: flex;
     gap: 15px;
@@ -214,80 +214,3 @@ body {
     border-color: var(--primary-color, #eaff00);
 }
 
-/* Cast and Crew */
-.cast-list {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.cast-item {
-    text-align: center;
-    width: 100px;
-}
-
-.cast-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid #333;
-}
-
-/* Related Movies */
-.related-movies {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.related-movie-card {
-    display: flex;
-    gap: 15px;
-    background: #1e293b;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
-    text-decoration: none;
-    color: white;
-}
-
-.related-movie-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color, #eaff00);
-}
-
-.related-movie-card img {
-    width: 80px;
-    height: 120px;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.related-info h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-.related-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #cbd5e1;
-}
-
-@media (max-width: 992px) {
-    .content-layout {
-        flex-direction: column;
-    }
-    .movie-info-wrapper {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .action-btns {
-        justify-content: center;
-    }
-}
