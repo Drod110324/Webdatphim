@@ -1,29 +1,25 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root {
-    --bg-color: #0f1035;
-    --bg-card: #1a1b41;
     --purple-main: #4b2082;
     --purple-light: #7b3eb8;
-    --yellow-main: #f3ea28;
-    --yellow-hover: #e0d81f;
     --text-white: #ffffff;
     --text-gray: #b0b0b0;
     --glass: rgba(255, 255, 255, 0.08);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-white);
+    background-color: var(--bg-main); /* Đã đổi sang biến chung nền tối */
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
 }
-
-
 
 main {
     max-width: 1200px;
@@ -56,11 +52,11 @@ main {
 }
 
 .tab-btn:hover {
-    color: var(--text-white);
+    color: var(--text-main);
 }
 
 .tab-btn.active {
-    color: var(--yellow-main);
+    color: var(--c-primary); /* Đã đổi sang màu vàng chung */
 }
 
 .tab-btn.active::after {
@@ -70,7 +66,7 @@ main {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: var(--yellow-main);
+    background-color: var(--c-primary); /* Đã đổi sang màu vàng chung */
     border-radius: 2px 2px 0 0;
 }
 

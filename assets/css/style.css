@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Spline+Sans:wght@500;600;700&display=swap');
+
+:root {
+    /* Khôi phục lại BẢNG MÀU GỐC CŨ của bạn */
+    --c-primary: #eaff00;       /* Vàng chanh gốc */
+    --c-primary-hover: #d4e600; /* Vàng đậm hơn khi hover */
+    --c-secondary: #eaff00;
+
+    --bg-main: #06050a;         /* Xanh đen tối (màu nền chính) */
+    --bg-header: #0b1121;       /* Xanh đen sáng hơn một chút cho header */
+    --bg-footer: #111111;       
+    --bg-card: #0f172a;         
+    --bg-input: #1e293b;        /* Xanh xám cho ô tìm kiếm / nút đặt vé */
+
+    --text-main: #ffffff;       
+    --text-secondary: #cbd5e1;  
+    --text-muted: #94a3b8;      
+    --text-dark: #000000;       /* Chữ đen trên nền vàng */
+
+    --border-main: #333333;     
+    --border-light: #475569;    
+
+    --c-success: #22c55e;
+    --c-danger: #ef4444;
+    --c-warning: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Trả về font chữ cũ nếu bạn không thích Inter */
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .headline {
+    font-family: Arial, sans-serif;
+}
+
+.text-primary { color: var(--c-primary) !important; }
+.bg-primary { background-color: var(--c-primary) !important; }
+
+.btn-primary {
+    background-color: var(--c-primary);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--c-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--bg-input);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.btn-secondary:hover {
+    opacity: 0.8;
+}
+
+/* ========================================================
+   GLOBAL COMPONENTS (Card Phim, Nút Bấm, v.v...)
+   Sử dụng ở bất cứ trang nào chỉ bằng cách gọi tên class
+   ======================================================== */
+
+/* Lưới danh sách phim (Grid) */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* Card Phim Cơ Bản */
+.movie-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: 8px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--c-primary);
+    box-shadow: 0 5px 15px rgba(234, 255, 0, 0.1);
+}
+
+/* Biến thể Card Phim có viền Vàng khi Active */
+.movie-card.active {
+    border-color: var(--c-primary);
+}
+
+/* Nút bấm (Outline Button) */
+.btn-outline {
+    background: transparent;
+    color: var(--c-primary);
+    border: 1px solid var(--c-primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--c-primary);
+    color: var(--text-dark);
+}

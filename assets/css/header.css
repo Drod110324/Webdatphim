@@ -1,0 +1,83 @@
+.header {
+    background-color: var(--bg-header);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.header-logo {
+    color: var(--c-primary);
+    font-size: 24px;
+    font-weight: 900;
+}
+.header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 5px 15px;
+    width: 300px;
+}
+.header-search input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding: 8px 0;
+}
+.header-search input::placeholder {
+    color: #94a3b8;
+}
+.search-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.header-nav {
+    display: flex;
+    gap: 30px;
+}
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.nav-link.active {
+    color: var(--c-primary);
+    border-bottom: 2px solid var(--c-primary);
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.bell-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.login-btn {
+    background-color: var(--c-primary);
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

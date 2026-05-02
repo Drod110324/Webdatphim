@@ -1,20 +1,1 @@
-/* ============================================================ */
-/* CINESTAR PAYMENT - CSS CHO TRANG THANH TOÁN                   */
-/* ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
-:root {
-    --bg-color: #0f1035;
-    --purple-main: #4b2082;
-    --yellow-main: #f3ea28;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    padding: 50px;
-}
-
-h1 { color: var(--yellow-main); border-bottom: 2px solid var(--purple-main); padding-bottom: 10px; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');:root {    --bg-color: #0f1035;    --purple-main: #4b2082;    --yellow-main: #f3ea28;}body {    background-color: var(--bg-color);    color: #fff;    font-family: 'Inter', sans-serif;    padding: 50px;}h1 { color: var(--yellow-main); border-bottom: 2px solid var(--purple-main); padding-bottom: 10px; }

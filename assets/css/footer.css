@@ -1,0 +1,112 @@
+.site-footer {
+    background-color: var(--bg-footer);
+    color: var(--text-secondary);
+    padding: 60px 0 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+}
+.footer-col h4 {
+    color: var(--text-main);
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--c-primary);
+}
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+.footer-col ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+.footer-col ul li a:hover {
+    color: var(--c-primary);
+    padding-left: 5px;
+}
+.footer-logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--c-primary);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--border-main);
+    color: var(--text-main);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.social-links a:hover {
+    background-color: var(--c-primary);
+    transform: translateY(-3px);
+}
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.payment-methods span {
+    background-color: var(--text-main);
+    color: var(--text-dark);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.footer-bottom {
+    border-top: 1px solid var(--border-main);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}

@@ -1,12 +1,6 @@
 :root {
-    --primary-color: #eaff00;
-    --primary-hover: #d4e600;
     --primary-glow: rgba(234, 255, 0, 0.15);
     --primary-dim: rgba(234, 255, 0, 0.6);
-    --header-bg-color: #0b1121;
-    --main-bg-color: #4a24df;
-    --border-color: #333;
-
     --surface-1: #0d0c14;
     --surface-2: #13111f;
     --surface-3: #1a1828;
@@ -14,7 +8,6 @@
     --text-primary: #f0f0f0;
     --text-secondary: #8a8a9a;
     --text-muted: #55556a;
-
     --success: #22c55e;
     --danger: #ef4444;
     --warning: #f59e0b;
@@ -29,7 +22,6 @@
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.15s ease;
 }
-
 *,
 *::before,
 *::after {
@@ -37,14 +29,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
     font-size: 16px;
 }
-
 body {
-    background-color: var(--main-bg-color);
+    background-color: var(--bg-main);
     color: var(--text-primary);
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -53,13 +43,11 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 a {
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
 }
-
 button {
     border: none;
     background: none;
@@ -67,44 +55,37 @@ button {
     font-family: inherit;
     transition: var(--transition);
 }
-
-
 .progress-bar-section {
     background: var(--surface-1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     padding: 24px 32px;
 }
-
 .progress-container {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
 }
-
 .steps {
     display: flex;
     justify-content: space-between;
     position: relative;
 }
-
 .progress-track {
     position: absolute;
     top: 18px;
     left: 40px;
     right: 40px;
     height: 2px;
-    background: var(--border-color);
+    background: var(--border-main);
     z-index: 0;
 }
-
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: var(--primary-color);
+    background: var(--c-primary);
     transition: width 0.6s ease;
     box-shadow: 0 0 10px var(--primary-glow);
 }
-
 .step {
     display: flex;
     flex-direction: column;
@@ -112,13 +93,12 @@ button {
     gap: 10px;
     z-index: 1;
 }
-
 .step-circle {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background: var(--surface-3);
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border-main);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,33 +107,27 @@ button {
     color: var(--text-muted);
     transition: var(--transition);
 }
-
 .step.active .step-circle {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--main-bg-color);
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+    color: var(--bg-main);
     box-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(234, 255, 0, 0.06);
 }
-
 .step.completed .step-circle {
     background: var(--primary-dim);
     border-color: var(--primary-dim);
-    color: var(--main-bg-color);
+    color: var(--bg-main);
 }
-
 .step-label {
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-muted);
     white-space: nowrap;
 }
-
 .step.active .step-label {
-    color: var(--primary-color);
+    color: var(--c-primary);
     font-weight: 600;
 }
-
-
 .booking-main {
     flex: 1;
     display: grid;
@@ -164,15 +138,12 @@ button {
     margin: 0 auto;
     min-height: calc(100vh - 64px - 88px);
 }
-
-
 .seat-section {
     padding: 32px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .showtime-info {
     width: 100%;
     max-width: 720px;
@@ -187,17 +158,15 @@ button {
     border-radius: var(--radius-lg);
     margin-bottom: 36px;
 }
-
 .showtime-movie h1 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 8px;
-    background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, #fff 0%, var(--c-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .seat-info-box,
 .price-box {
     width: 100%;
@@ -208,15 +177,12 @@ button {
     margin-bottom: 28px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .seat-info-box {
     min-height: 180px;
 }
-
 .price-box {
     min-height: 120px;
 }
-
 .box-title {
     font-size: 1.1rem;
     font-weight: 700;
@@ -224,14 +190,11 @@ button {
     color: var(--text-primary);
     margin-bottom: 16px;
 }
-
 .seat-info-content,
 .price-content {
     color: var(--text-muted);
     font-size: 0.85rem;
 }
-
-
 .order-summary {
     background: var(--surface-1);
     border-left: 1px solid rgba(255, 255, 255, 0.05);
@@ -239,7 +202,6 @@ button {
     display: flex;
     flex-direction: column;
 }
-
 .summary-card {
     position: sticky;
     top: 96px;
@@ -247,7 +209,6 @@ button {
     flex-direction: column;
     gap: 0;
 }
-
 .summary-title {
     font-size: 1.1rem;
     font-weight: 700;
@@ -257,7 +218,6 @@ button {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     position: relative;
 }
-
 .summary-title::after {
     content: '';
     position: absolute;
@@ -265,24 +225,19 @@ button {
     left: 0;
     width: 50px;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--c-primary);
 }
-
-
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
-
 ::-webkit-scrollbar-track {
-    background: var(--main-bg-color);
+    background: var(--bg-main);
 }
-
 ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: var(--border-main);
     border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
 }
