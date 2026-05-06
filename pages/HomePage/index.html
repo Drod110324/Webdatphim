@@ -9,11 +9,50 @@
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <div class="silder">
-        <span>silder</span>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('../../assets/images/movie poster 1.jpg')"></div>
+                <img src="../../assets/images/movie poster 1.jpg" alt="Poster 1">
+            </div>
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('../../assets/images/movie poster 2.jpg')"></div>
+                <img src="../../assets/images/movie poster 2.jpg" alt="Poster 2">
+            </div>
+        </div>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
     </div>
     <div class="quick-booking-wrapper">
-        <span>đặt vé nhanh</span>
+        <form class="quick-booking-form" action="../BookingSeat/index.html">
+            <select name="movie" id="movie" required>
+                <option value="" disabled selected hidden>Chọn phim</option>
+                <option value="1">Lord Of the Ring</option>
+                <option value="2">Kimetus No Yaiba</option>
+            </select>
+            <select name="cinema" id="cinema" required>
+                <option value="" disabled selected hidden>Chọn rạp</option>
+                <option value="1">Cinestar Huế</option>
+            </select>
+            <select name="date" id="date" required>
+                <option value="" disabled selected hidden>Chọn ngày</option>
+                <option value="1">10/05/2026</option>
+                <option value="2">11/05/2026</option>
+                <option value="3">12/05/2026</option>
+            </select>
+            <select name="time" id="time" required>
+                <option value="" disabled selected hidden>Chọn suất</option>
+                <option value="1">09:00</option>
+                <option value="2">13:30</option>
+                <option value="3">18:15</option>
+                <option value="4">20:30</option>
+            </select>
+            <button type="submit" class="quick-buy-btn">MUA VÉ NGAY</button>
+        </form>
     </div>
     <main class="container section">
         <div class="section-head">
@@ -38,5 +77,32 @@
     <div id="footer-placeholder"></div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            else if (index < 0) slideIndex = totalSlides - 1;
+            else slideIndex = index;
+
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            if(dots[slideIndex]) dots[slideIndex].classList.add('active');
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => showSlide(slideIndex - 1));
+        document.querySelector('.next').addEventListener('click', () => showSlide(slideIndex + 1));
+        setInterval(() => {
+            showSlide(slideIndex + 1);
+        }, 5000);
+    </script>
 </body>
 </html>

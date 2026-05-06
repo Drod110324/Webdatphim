@@ -46,7 +46,7 @@ const footerHTML = `
             <div class="footer-col">
                 <a href="../HomePage/index.html" class="footer-logo">DATPHIM</a>
                 <p><strong>CÔNG TY TNHH DATPHIM VIỆT NAM</strong></p>
-                <p>Trụ sở: 123 Đường Phim Ảnh, Quận 1, TP. Hồ Chí Minh</p>
+                <p>24 Hai Bà Trưng, Phường Thuận Hóa, TP Huế</p>
                 <p>Hotline: <strong style="color: var(--primary);">1900 1234</strong></p>
                 <p>Email: hotro@datphim.vn</p>
             </div>
