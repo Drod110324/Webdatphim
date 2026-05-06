@@ -1,4 +1,123 @@
-<!DOCTYPE html><html lang="vi"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="description" content="Đặt ghế xem phim tại Cinestar - Chọn ghế yêu thích và đặt vé nhanh chóng">    <title>Đặt Ghế Xem Phim - Cinestar</title>    <link rel="stylesheet" href="style.css">    <link rel="stylesheet" href="../HomePage/style.css">    <link rel="stylesheet" href="../../assets/css/style.css">
-</head><body>    <div id="header-placeholder"></div>    <section class="progress-bar-section" id="progress-section">        <div class="progress-container">            <div class="progress-track">                <div class="progress-fill" id="progress-fill"></div>            </div>            <div class="steps">                <div class="step active" id="step-1">                    <div class="step-circle">1</div>                    <span class="step-label">Chọn Ghế</span>                </div>                <div class="step" id="step-2">                    <div class="step-circle">2</div>                    <span class="step-label">Bắp & Nước</span>                </div>                <div class="step" id="step-3">                    <div class="step-circle">3</div>                    <span class="step-label">Thanh Toán</span>                </div>                <div class="step" id="step-4">                    <div class="step-circle">4</div>                    <span class="step-label">Xác Nhận</span>                </div>            </div>        </div>    </section>    <main class="booking-main" id="booking-main">        <section class="seat-section" id="seat-section">            <div class="showtime-info" id="showtime-info">                <div class="showtime-movie">                    <h1 id="movie-title">Tên Phim</h1>                </div>            </div>            <div class="seat-info-box" id="seat-info-box">                <h2 class="box-title">Thông Tin Ghế Ngồi</h2>                <div class="seat-info-content">                </div>            </div>            <div class="price-box" id="price-box">                <h2 class="box-title">Giá Vé</h2>                <div class="price-content">                </div>            </div>        </section>        <aside class="order-summary" id="order-summary">            <div class="summary-card">                <h2 class="summary-title">Thông Tin Đặt Vé</h2>            </div>        </aside>    </main>    <div id="footer-placeholder"></div>    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đặt ghế xem phim tại Cinestar - Chọn ghế yêu thích và đặt vé nhanh chóng">
+    <title>Đặt Ghế Xem Phim - Cinestar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../HomePage/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <section class="progress-bar-section" id="progress-section">
+        <div class="progress-container">
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="steps">
+                <div class="step active" id="step-1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Chọn Ghế</span>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Bắp & Nước</span>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Thanh Toán</span>
+                </div>
+                <div class="step" id="step-4">
+                    <div class="step-circle">4</div>
+                    <span class="step-label">Xác Nhận</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="booking-main" id="booking-main">
+        <section class="seat-section" id="seat-section">
+            <div class="showtime-info" id="showtime-info">
+    <div class="movie-details-container">
+        <!-- Bên trái: Poster Phim -->
+        <div class="movie-poster-wrapper">
+            <img src="../../assets/images/Akaza Vô hạn thành.jpg" alt="Poster" class="movie-info-img">
+        </div>
+
+        <!-- Bên phải: Thông tin chi tiết -->
+        <div class="movie-text-content">
+            <h1 class="movie-title-header">THANH GƯƠM DIỆT QUỶ: VÔ HẠN THÀNH</h1>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Thể Loại:</span>
+                    <span class="info-value">Hành động, Phiêu lưu, Hoạt hình</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Thời Lượng:</span>
+                    <span class="info-value">120 Phút</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Khởi Chiếu:</span>
+                    <span class="info-value">12/08/2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Ngôn Ngữ:</span>
+                    <span class="info-value">Nhật Bản (Phụ đề Tiếng Việt)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Độ Tuổi:</span>
+                    <span class="info-value warning-text">T13 - Cấm khán giả dưới 13 tuổi</span>
+                </div>
+            </div>
+
+            <div class="movie-description">
+                <h3 class="desc-title">MÔ TẢ NỘI DUNG</h3>
+                <p class="desc-text">
+                    Tiếp nối những sự kiện kịch tính, các kiếm sĩ diệt quỷ bước vào trận chiến cuối cùng 
+                    tại Vô Hạn Thành để đối đầu với chúa quỷ Muzan Kibutsuji...
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="seat-info-box" id="seat-info-box">
+                <h2 class="box-title">Thông Tin Ghế Ngồi</h2>
+                <div class="seat-info-content">
+                </div>
+            </div>
+            <div class="price-box" id="price-box">
+    <h2 class="box-title">Giá Vé</h2>
+    <div class="price-content">
+        <div class="ticket-price-row">
+            <div class="price-item-static">
+                <span class="status-dot standard"></span>
+                <span class="ticket-label">Ghế thường</span>
+                <span class="ticket-value">45.000VND</span>
+            </div>
+            <div class="price-item-static">
+                <span class="status-dot vip"></span>
+                <span class="ticket-label">Ghế VIP</span>
+                <span class="ticket-value">70.000VND</span>
+            </div>
+            <div class="price-item-static">
+                <span class="status-dot double"></span>
+                <span class="ticket-label">Ghế đôi</span>
+                <span class="ticket-value">125.000VND</span>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+        <aside class="order-summary" id="order-summary">
+            <div class="summary-card">
+                <h2 class="summary-title">Thông Tin Đặt Vé</h2>
+            </div>
+        </aside>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>
-</body></html>
+</body>
+</html>
