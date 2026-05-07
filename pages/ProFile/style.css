@@ -31,15 +31,23 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    width: 400px;
-    margin: 60px auto;
+.profile-container {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+.profile-card {
+    width: 450px;
 
     background: var(--bg-card);
 
     border: 1px solid var(--border-main);
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     padding: 35px;
 
@@ -50,21 +58,48 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
-.container h2 {
+.profile-header {
     text-align: center;
 
+    margin-bottom: 30px;
+}
+
+.profile-header img {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--c-primary);
+
+    margin-bottom: 15px;
+
+    object-fit: cover;
+}
+
+.profile-header h2 {
     color: var(--c-primary);
 
-    margin-bottom: 25px;
+    margin-bottom: 8px;
 
     font-size: 28px;
 }
 
-.form-group {
+.profile-header p {
+    color: var(--text-gray);
+
+    font-size: 14px;
+}
+
+.profile-body {
+    width: 100%;
+}
+
+.info-group {
     margin-bottom: 18px;
 }
 
-.form-group label {
+.info-group label {
     display: block;
 
     margin-bottom: 8px;
@@ -74,7 +109,7 @@ body {
     font-size: 14px;
 }
 
-.form-group input {
+.info-group input {
     width: 100%;
 
     padding: 12px;
@@ -92,26 +127,31 @@ body {
     transition: 0.3s;
 }
 
-.form-group input:focus {
+.info-group input:focus {
     border-color: var(--c-primary);
 
     box-shadow: 0 0 10px rgba(234, 255, 0, 0.2);
 }
 
-.btn-primary {
-    width: 100%;
+.btn-group {
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+    flex: 1;
 
     padding: 13px;
-
-    background: var(--c-primary);
-
-    color: #000;
 
     border: none;
 
     border-radius: 8px;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: bold;
 
@@ -120,30 +160,32 @@ body {
     transition: 0.3s;
 }
 
+.btn-primary {
+    background: var(--c-primary);
+
+    color: #000;
+}
+
 .btn-primary:hover {
     background: var(--c-primary-hover);
 
     transform: scale(1.02);
 }
 
-.login-link {
-    text-align: center;
+.btn-secondary {
+    background: transparent;
 
-    margin-top: 18px;
-}
-
-.login-link a {
     color: var(--c-primary);
 
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: bold;
+    border: 1px solid var(--c-primary);
 }
 
-.login-link a:hover {
-    text-decoration: underline;
+.btn-secondary:hover {
+    background: var(--c-primary);
+
+    color: #000;
+
+    transform: scale(1.02);
 }
 
 @keyframes fadeIn {

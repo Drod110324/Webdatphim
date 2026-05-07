@@ -32,14 +32,14 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 420px;
     margin: 60px auto;
 
     background: var(--bg-card);
 
     border: 1px solid var(--border-main);
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     padding: 35px;
 
@@ -103,6 +103,8 @@ body {
 
     padding: 13px;
 
+    margin-top: 10px;
+
     background: var(--c-primary);
 
     color: #000;
@@ -126,13 +128,13 @@ body {
     transform: scale(1.02);
 }
 
-.login-link {
-    text-align: center;
+.back-link {
+    margin-top: 20px;
 
-    margin-top: 18px;
+    text-align: center;
 }
 
-.login-link a {
+.back-link a {
     color: var(--c-primary);
 
     text-decoration: none;
@@ -142,7 +144,7 @@ body {
     font-weight: bold;
 }
 
-.login-link a:hover {
+.back-link a:hover {
     text-decoration: underline;
 }
 
