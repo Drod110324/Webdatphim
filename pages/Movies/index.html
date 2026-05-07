@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách phim - Cinestar</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="header-placeholder"></div>
     <main>
+        <div class="movie-filters">
+            <div class="filters-container">
+                <div class="filter-item">
+                    <select id="filter-category">
+                        <option value="">Tất cả thể loại</option>
+                        <option value="Hành động">Hành động</option>
+                        <option value="Hoạt hình">Hoạt hình</option>
+                        <option value="Kinh dị">Kinh dị</option>
+                        <option value="Tình cảm">Tình cảm</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <select id="filter-time">
+                        <option value="">Giờ chiếu</option>
+                        <option value="morning">Buổi sáng</option>
+                        <option value="afternoon">Buổi chiều</option>
+                        <option value="evening">Buổi tối</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <select id="filter-age">
+                        <option value="">Độ tuổi</option>
+                        <option value="P">P - Mọi độ tuổi</option>
+                        <option value="T13">T13 - Trên 13 tuổi</option>
+                        <option value="T16">T16 - Trên 16 tuổi</option>
+                        <option value="T18">T18 - Trên 18 tuổi</option>
+                    </select>
+                </div>
+                <button class="btn-filter-apply">LỌC PHIM</button>
+            </div>
+        </div>
+
         <div class="movie-tabs">
             <button class="tab-btn active" data-target="now-showing">Đang chiếu</button>
             <button class="tab-btn" data-target="coming-soon">Sắp chiếu</button>
@@ -17,42 +51,23 @@
         </div>
         <div id="now-showing" class="tab-content active">
             <div class="movie-grid">
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim 1</span></a></div>
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim 2</span></a></div>
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim 3</span></a></div>
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim 4</span></a></div>
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim 5</span></a></div>
             </div>
         </div>
-        
+
         <div id="coming-soon" class="tab-content">
             <div class="movie-grid">
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Sắp Chiếu 1</span></a></div>
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Sắp Chiếu 2</span></a></div>
             </div>
         </div>
 
         <div id="early-screening" class="tab-content">
             <div class="movie-grid">
-                <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Suất Chiếu Sớm 1</span></a></div>
             </div>
         </div>
     </main>
-    <script>
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                btn.classList.add('active');
-                const targetId = btn.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    </script>
+    <script src="index.js"></script>
     <div id="footer-placeholder"></div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>
 </body>
+
 </html>
