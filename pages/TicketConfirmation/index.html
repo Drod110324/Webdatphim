@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vé điện tử</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="ticket-container">
+
+    <div class="ticket-card">
+
+        <div class="ticket-header">
+            <h2>Thanh toán thành công</h2>
+            <p>Vé điện tử của bạn</p>
+        </div>
+
+        <!-- Thông tin phim -->
+        <div class="ticket-info">
+
+            <div class="info-item">
+                <span>Tên phim</span>
+                <strong id="movieName"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Rạp</span>
+                <strong id="cinema"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Suất chiếu</span>
+                <strong id="showtime"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Ghế</span>
+                <strong id="seats"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Combo</span>
+                <strong id="combo"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Tổng tiền</span>
+                <strong id="totalPrice"></strong>
+            </div>
+
+        </div>
+
+        <!-- QR CODE -->
+        <div class="qr-section">
+
+            <img 
+                id="qrCode"
+                src=""
+                alt="QR Code"
+            >
+
+            <p>
+                Mã vé:
+                <strong id="ticketCode"></strong>
+            </p>
+
+        </div>
+
+        <!-- Button -->
+        <div class="ticket-actions">
+
+            <a href="../Account/BookingHistory/index.html" class="btn-history">
+                Lịch sử đặt vé
+            </a>
+
+            <a href="../HomePage/index.html" class="btn-home">
+                Trang chủ
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    // Lấy dữ liệu từ localStorage
+
+    const movieName =
+        localStorage.getItem("movieName") || "Chưa có";
+
+    const cinema =
+        localStorage.getItem("cinema") || "Chưa có";
+
+    const showtime =
+        localStorage.getItem("showtime") || "Chưa có";
+
+    const seats =
+        localStorage.getItem("seats") || "Chưa có";
+
+    const combo =
+        localStorage.getItem("combo") || "Không có";
+
+    const totalPrice =
+        localStorage.getItem("totalPrice") || "0đ";
+
+    // Hiển thị dữ liệu
+
+    document.getElementById("movieName").innerText =
+        movieName;
+
+    document.getElementById("cinema").innerText =
+        cinema;
+
+    document.getElementById("showtime").innerText =
+        showtime;
+
+    document.getElementById("seats").innerText =
+        seats;
+
+    document.getElementById("combo").innerText =
+        combo;
+
+    document.getElementById("totalPrice").innerText =
+        totalPrice;
+
+    // Tạo mã vé random
+
+    const ticketCode =
+        "CNS" + Math.floor(Math.random() * 1000000);
+
+    document.getElementById("ticketCode").innerText =
+        ticketCode;
+
+    // QR Code
+
+    document.getElementById("qrCode").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + ticketCode;
+
+</script>
+
+</body>
+</html>

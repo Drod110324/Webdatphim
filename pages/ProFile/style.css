@@ -29,6 +29,7 @@ body {
 
     background-size: cover;
     background-position: center;
+
     min-height: 100vh;
 
     display: flex;
@@ -38,16 +39,23 @@ body {
     padding: 30px;
 }
 
-.container {
-    width: 420px;
+.profile-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 450px;
 
     background: var(--bg-card);
 
     border: 1px solid var(--border-main);
 
-    border-radius: 14px;
+    border-radius: 16px;
 
-    padding: 30px;
+    padding: 35px;
 
     backdrop-filter: blur(10px);
 
@@ -56,31 +64,58 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
-.container h2 {
+.profile-header {
     text-align: center;
 
+    margin-bottom: 30px;
+}
+
+.profile-header img {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--c-primary);
+
+    margin-bottom: 15px;
+
+    object-fit: cover;
+}
+
+.profile-header h2 {
     color: var(--c-primary);
 
-    margin-bottom: 25px;
+    margin-bottom: 8px;
 
     font-size: 28px;
 }
 
-.form-group {
-    margin-bottom: 16px;
+.profile-header p {
+    color: var(--text-gray);
+
+    font-size: 14px;
 }
 
-.form-group label {
+.profile-body {
+    width: 100%;
+}
+
+.info-group {
+    margin-bottom: 18px;
+}
+
+.info-group label {
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 
     color: var(--text-gray);
 
     font-size: 14px;
 }
 
-.form-group input {
+.info-group input {
     width: 100%;
 
     padding: 12px;
@@ -98,46 +133,31 @@ body {
     transition: 0.3s;
 }
 
-.form-group input:focus {
+.info-group input:focus {
     border-color: var(--c-primary);
 
     box-shadow: 0 0 10px rgba(234, 255, 0, 0.2);
 }
 
-.checkbox-group {
+.btn-group {
+    margin-top: 25px;
+
     display: flex;
 
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 10px;
-
-    color: var(--text-gray);
-
-    font-size: 14px;
+    gap: 12px;
 }
 
-.checkbox-group input {
-    width: auto;
-}
-
-.btn-primary {
-    width: 100%;
+.btn-primary,
+.btn-secondary {
+    flex: 1;
 
     padding: 13px;
-
-    margin-top: 18px;
-
-    background: var(--c-primary);
-
-    color: #000;
 
     border: none;
 
     border-radius: 8px;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: bold;
 
@@ -146,32 +166,32 @@ body {
     transition: 0.3s;
 }
 
+.btn-primary {
+    background: var(--c-primary);
+
+    color: #000;
+}
+
 .btn-primary:hover {
     background: var(--c-primary-hover);
 
     transform: scale(1.02);
 }
 
-.login-link {
-    margin-top: 18px;
+.btn-secondary {
+    background: transparent;
 
-    text-align: center;
-
-    color: var(--text-gray);
-
-    font-size: 14px;
-}
-
-.login-link a {
     color: var(--c-primary);
 
-    text-decoration: none;
-
-    font-weight: bold;
+    border: 1px solid var(--c-primary);
 }
 
-.login-link a:hover {
-    text-decoration: underline;
+.btn-secondary:hover {
+    background: var(--c-primary);
+
+    color: #000;
+
+    transform: scale(1.02);
 }
 
 @keyframes fadeIn {
