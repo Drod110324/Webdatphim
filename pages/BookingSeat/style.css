@@ -464,10 +464,10 @@ button {
  
 /* selected */
 .seat.sel {
-  background: var(--sel-bg) ;
-  border-color: var(--sel-bd) ;
-  color: var(--sel-txt) ;
-  box-shadow: 0 0 14px var(--yellow-glow), 0 4px 20px rgba(234,255,0,0.3);
+  background-color: #facc15; 
+    border-color: #facc15;    
+    color: #000000;
+  box-shadow: 0 0 14px var(--yellow-glow), 0 4px 20px #facc15;
   transform: translateY(-2px);
 }
 .seat.sel::before { opacity: 0.3; background: #000; }
@@ -656,3 +656,7 @@ button {
 .seat.double { width: 92px; background: var(--double-bg); border-color: var(--double-bd); color: var(--double-txt); }
 .seat.selected { background: var(--sel-bg) !important; border-color: var(--sel-bd) !important; color: var(--sel-txt) !important; box-shadow: 0 0 14px var(--yellow-glow); }
 .seat.booked { background: var(--booked-bg); border-color: var(--booked-bd); color: var(--booked-bd); pointer-events: none; }
+.seat-row .seat.sel {
+    background-color: #facc15 !important;
+    color: #000 !important;
+}
