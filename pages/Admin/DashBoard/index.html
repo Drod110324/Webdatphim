@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../assets/css/admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CineAdmin</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="../Dashboard/index.html" class="active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="../Movies/index.html">
+                    <i class="fa-solid fa-film"></i>
+                    Quản lý phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../Showtimes/index.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Suất chiếu
+                </a>
+            </li>
+
+            <li>
+                <a href="../Cinemas/index.html">
+                    <i class="fa-solid fa-building"></i>
+                    Rạp phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../FoodDrink/index.html">
+                    <i class="fa-solid fa-burger"></i>
+                    Bắp nước
+                </a>
+            </li>
+
+            <li>
+                <a href="../Users/index.html">
+                    <i class="fa-solid fa-users"></i>
+                    Người dùng
+                </a>
+            </li>
+
+            <li>
+                <a href="../../Home/index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Đăng xuất
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div class="topbar-title">
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="admin-profile">
+                <img
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="Admin"
+                >
+
+                <span>Admin</span>
+            </div>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="dashboard-cards">
+
+            <div class="card">
+                <h3>Tổng doanh thu</h3>
+                <p>250.000.000đ</p>
+            </div>
+
+            <div class="card">
+                <h3>Vé đã bán</h3>
+                <p>12.450</p>
+            </div>
+
+            <div class="card">
+                <h3>Phim đang chiếu</h3>
+                <p>18</p>
+            </div>
+
+            <div class="card">
+                <h3>Người dùng</h3>
+                <p>5.320</p>
+            </div>
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-section">
+
+            <div class="table-header">
+                <h2>Phim bán chạy</h2>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Tên phim</th>
+                        <th>Rạp</th>
+                        <th>Vé bán</th>
+                        <th>Doanh thu</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Avengers: Endgame</td>
+                        <td>Cinestar Huế</td>
+                        <td>3200</td>
+                        <td>120.000.000đ</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spider-Man</td>
+                        <td>Cinestar Đà Nẵng</td>
+                        <td>2100</td>
+                        <td>90.000.000đ</td>
+                    </tr>
+
+                    <tr>
+                        <td>Batman</td>
+                        <td>Cinestar TP.HCM</td>
+                        <td>1800</td>
+                        <td>75.000.000đ</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

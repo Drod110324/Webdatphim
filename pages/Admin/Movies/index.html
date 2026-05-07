@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý phim</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../assets/css/admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CineAdmin</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="../Dashboard/index.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="../Movies/index.html" class="active">
+                    <i class="fa-solid fa-film"></i>
+                    Quản lý phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../Showtimes/index.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Suất chiếu
+                </a>
+            </li>
+
+            <li>
+                <a href="../Cinemas/index.html">
+                    <i class="fa-solid fa-building"></i>
+                    Rạp phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../FoodDrink/index.html">
+                    <i class="fa-solid fa-burger"></i>
+                    Bắp nước
+                </a>
+            </li>
+
+            <li>
+                <a href="../Users/index.html">
+                    <i class="fa-solid fa-users"></i>
+                    Người dùng
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div class="topbar-title">
+                <h1>Quản lý phim</h1>
+            </div>
+
+            <a href="#" class="btn-add">
+                <i class="fa-solid fa-plus"></i>
+                Thêm phim
+            </a>
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-section">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Poster</th>
+                        <th>Tên phim</th>
+                        <th>Thể loại</th>
+                        <th>Thời lượng</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <img
+                                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=300&q=80"
+                                alt="Movie"
+                                class="movie-poster"
+                            >
+                        </td>
+
+                        <td>Avengers: Endgame</td>
+
+                        <td>Hành động</td>
+
+                        <td>181 phút</td>
+
+                        <td>
+                            <span class="status showing">
+                                Đang chiếu
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <img
+                                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=800&auto=format&fit=crop"
+                                alt="Movie"
+                                class="movie-poster"
+                            >
+                        </td>
+
+                        <td>Spider-Man</td>
+
+                        <td>Phiêu lưu</td>
+
+                        <td>148 phút</td>
+
+                        <td>
+                            <span class="status upcoming">
+                                Sắp chiếu
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

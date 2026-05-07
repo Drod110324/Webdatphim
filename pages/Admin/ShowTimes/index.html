@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý suất chiếu</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../assets/css/admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CineAdmin</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="../Dashboard/index.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="../Movies/index.html">
+                    <i class="fa-solid fa-film"></i>
+                    Quản lý phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../Showtimes/index.html" class="active">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Suất chiếu
+                </a>
+            </li>
+
+            <li>
+                <a href="../Cinemas/index.html">
+                    <i class="fa-solid fa-building"></i>
+                    Rạp phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../FoodDrink/index.html">
+                    <i class="fa-solid fa-burger"></i>
+                    Bắp nước
+                </a>
+            </li>
+
+            <li>
+                <a href="../Users/index.html">
+                    <i class="fa-solid fa-users"></i>
+                    Người dùng
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div class="topbar-title">
+                <h1>Quản lý suất chiếu</h1>
+            </div>
+
+            <a href="#" class="btn-add">
+                <i class="fa-solid fa-plus"></i>
+                Thêm suất chiếu
+            </a>
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-section">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Phim</th>
+                        <th>Rạp</th>
+                        <th>Phòng</th>
+                        <th>Ngày chiếu</th>
+                        <th>Giờ chiếu</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Avengers: Endgame</td>
+
+                        <td>Cinestar Huế</td>
+
+                        <td>Cinema 3</td>
+
+                        <td>20/05/2026</td>
+
+                        <td>19:30</td>
+
+                        <td>
+                            <span class="status showing">
+                                Đang mở
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Spider-Man</td>
+
+                        <td>Cinestar Đà Nẵng</td>
+
+                        <td>Cinema 5</td>
+
+                        <td>25/05/2026</td>
+
+                        <td>20:00</td>
+
+                        <td>
+                            <span class="status upcoming">
+                                Sắp chiếu
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

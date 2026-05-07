@@ -2,11 +2,123 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thanh toán - Cinestar</title>
-    <link rel="stylesheet" href="./Payment/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
+
+
+<div class="payment-container">
+
+    <div class="payment-card">
+
+        <h2>Thanh toán vé phim</h2>
+
+        <!-- Thông tin vé -->
+        <div class="ticket-info">
+
+            <div class="info-item">
+                <span>Tên phim</span>
+                <strong id="movieName"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Rạp</span>
+                <strong id="cinema"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Suất chiếu</span>
+                <strong id="showtime"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Ghế đã chọn</span>
+                <strong id="seats"></strong>
+            </div>
+
+            <div class="info-item">
+                <span>Combo</span>
+                <strong id="combo"></strong>
+            </div>
+
+        </div>
+
+        <!-- Tổng tiền -->
+        <div class="payment-summary">
+
+            <div class="summary-item">
+                <span>Tổng thanh toán</span>
+                <strong id="totalPrice"></strong>
+            </div>
+
+        </div>
+
+        <!-- Phương thức thanh toán -->
+        <div class="payment-method">
+
+            <h3>Chọn phương thức thanh toán</h3>
+
+            <label>
+                <input type="radio" name="payment" checked>
+                MOMO
+            </label>
+
+            <label>
+                <input type="radio" name="payment">
+                VNPAY
+            </label>
+
+            <label>
+                <input type="radio" name="payment">
+                ZaloPay
+            </label>
+
+            <label>
+                <input type="radio" name="payment">
+                Thẻ ngân hàng
+            </label>
+
+        </div>
+
+        <!-- Nút thanh toán -->
+        <a href="../TicketConfirmation/index.html" class="btn-pay">
+            Thanh toán ngay
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+    // Lấy dữ liệu từ localStorage
+
+    document.getElementById("movieName").innerText =
+        localStorage.getItem("movieName") || "Chưa chọn";
+
+    document.getElementById("cinema").innerText =
+        localStorage.getItem("cinema") || "Chưa có";
+
+    document.getElementById("showtime").innerText =
+        localStorage.getItem("showtime") || "Chưa có";
+
+    document.getElementById("seats").innerText =
+        localStorage.getItem("seats") || "Chưa chọn ghế";
+
+    document.getElementById("combo").innerText =
+        localStorage.getItem("combo") || "Không có";
+
+    document.getElementById("totalPrice").innerText =
+        localStorage.getItem("totalPrice") || "0đ";
+
+</script>
+
     <div id="footer-placeholder"></div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>

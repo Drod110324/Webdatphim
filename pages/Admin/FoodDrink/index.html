@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý bắp nước</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../assets/css/admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CineAdmin</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="../Dashboard/index.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="../Movies/index.html">
+                    <i class="fa-solid fa-film"></i>
+                    Quản lý phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../Showtimes/index.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Suất chiếu
+                </a>
+            </li>
+
+            <li>
+                <a href="../Cinemas/index.html">
+                    <i class="fa-solid fa-building"></i>
+                    Rạp phim
+                </a>
+            </li>
+
+            <li>
+                <a href="../FoodDrink/index.html" class="active">
+                    <i class="fa-solid fa-burger"></i>
+                    Bắp nước
+                </a>
+            </li>
+
+            <li>
+                <a href="../Users/index.html">
+                    <i class="fa-solid fa-users"></i>
+                    Người dùng
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div class="topbar-title">
+                <h1>Quản lý bắp nước</h1>
+            </div>
+
+            <a href="#" class="btn-add">
+                <i class="fa-solid fa-plus"></i>
+                Thêm combo
+            </a>
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-section">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Hình ảnh</th>
+                        <th>Tên combo</th>
+                        <th>Mô tả</th>
+                        <th>Giá</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <img
+                                src="https://images.unsplash.com/photo-1585647347384-2593bc35786b?q=80&w=800&auto=format&fit=crop"
+                                alt="Combo"
+                                class="combo-image"
+                            >
+                        </td>
+
+                        <td>Combo Couple</td>
+
+                        <td>2 bắp + 2 nước</td>
+
+                        <td>149.000đ</td>
+
+                        <td>
+                            <span class="status showing">
+                                Đang bán
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <img
+                                src="https://images.unsplash.com/photo-1578849278619-e73505e9610f?q=80&w=800&auto=format&fit=crop"
+                                alt="Combo"
+                                class="combo-image"
+                            >
+                        </td>
+
+                        <td>Combo Family</td>
+
+                        <td>4 bắp + 4 nước</td>
+
+                        <td>299.000đ</td>
+
+                        <td>
+                            <span class="status upcoming">
+                                Tạm hết
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="btn-edit">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button class="btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
