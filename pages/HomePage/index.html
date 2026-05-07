@@ -6,6 +6,7 @@
     <title>Trang Chủ</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../Movies/style.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -57,26 +58,32 @@
     <main class="container section">
         <div class="section-head">
             <div class="filter-tabs">
-                <h3 class="active">Phim Đang Chiếu</h3>
-                <h3>Phim Sắp Chiếu</h3>
+                <h3 class="tab-btn active" data-target="now-showing">Phim Đang Chiếu</h3>
+                <h3 class="tab-btn" data-target="coming-soon">Phim Sắp Chiếu</h3>
             </div>
             <a href="../Movies/index.html" style="color: var(--c-primary); font-weight: 600;">Xem Tất Cả &raquo;</a>
         </div>
 
-        <div class="movie-grid">
-            <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Đang Hot 1</span></a></div>
-            <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Đang Hot 2</span></a></div>
-            <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Đang Hot 3</span></a></div>
-            <div class="movie-card"><a href="../MovieDetail/index.html" style="text-decoration: none;"><span>Phim Đang Hot 4</span></a></div>
+        <div id="now-showing" class="tab-content active">
+            <div class="movie-grid">
+            </div>
         </div>
+
+        <div id="coming-soon" class="tab-content">
+            <div class="movie-grid">
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+       <script src="../../assets/js/main.js"></script>
+        
     </main>
     <section class="container section">
         <span>khuyến mãi</span>
     </section>
 
     <div id="footer-placeholder"></div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../../assets/js/main.js"></script>
     <script>
         let slideIndex = 0;
         const slides = document.querySelector('.slides');
