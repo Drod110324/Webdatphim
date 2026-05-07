@@ -1,4 +1,393 @@
-<!DOCTYPE html><html lang="vi"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="description" content="Đặt ghế xem phim tại Cinestar - Chọn ghế yêu thích và đặt vé nhanh chóng">    <title>Đặt Ghế Xem Phim - Cinestar</title>    <link rel="stylesheet" href="style.css">    <link rel="stylesheet" href="../HomePage/style.css">    <link rel="stylesheet" href="../../assets/css/style.css">
-</head><body>    <div id="header-placeholder"></div>    <section class="progress-bar-section" id="progress-section">        <div class="progress-container">            <div class="progress-track">                <div class="progress-fill" id="progress-fill"></div>            </div>            <div class="steps">                <div class="step active" id="step-1">                    <div class="step-circle">1</div>                    <span class="step-label">Chọn Ghế</span>                </div>                <div class="step" id="step-2">                    <div class="step-circle">2</div>                    <span class="step-label">Bắp & Nước</span>                </div>                <div class="step" id="step-3">                    <div class="step-circle">3</div>                    <span class="step-label">Thanh Toán</span>                </div>                <div class="step" id="step-4">                    <div class="step-circle">4</div>                    <span class="step-label">Xác Nhận</span>                </div>            </div>        </div>    </section>    <main class="booking-main" id="booking-main">        <section class="seat-section" id="seat-section">            <div class="showtime-info" id="showtime-info">                <div class="showtime-movie">                    <h1 id="movie-title">Tên Phim</h1>                </div>            </div>            <div class="seat-info-box" id="seat-info-box">                <h2 class="box-title">Thông Tin Ghế Ngồi</h2>                <div class="seat-info-content">                </div>            </div>            <div class="price-box" id="price-box">                <h2 class="box-title">Giá Vé</h2>                <div class="price-content">                </div>            </div>        </section>        <aside class="order-summary" id="order-summary">            <div class="summary-card">                <h2 class="summary-title">Thông Tin Đặt Vé</h2>            </div>        </aside>    </main>    <div id="footer-placeholder"></div>    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đặt ghế xem phim tại Cinestar - Chọn ghế yêu thích và đặt vé nhanh chóng">
+    <title>Đặt Ghế Xem Phim - Cinestar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../HomePage/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <section class="progress-bar-section" id="progress-section">
+        <div class="progress-container">
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="steps">
+                <div class="step active" id="step-1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Chọn Ghế</span>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Bắp & Nước</span>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Thanh Toán</span>
+                </div>
+                <div class="step" id="step-4">
+                    <div class="step-circle">4</div>
+                    <span class="step-label">Xác Nhận</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="booking-main" id="booking-main">
+        <section class="seat-section" id="seat-section">
+            <div class="showtime-info" id="showtime-info">
+                <div class="movie-details-container">
+                    <!-- Bên trái: Poster Phim -->
+                    <div class="movie-poster-wrapper">
+                        <img src="../../assets/images/Akaza Vô hạn thành.jpg" alt="Poster" class="movie-info-img">
+                    </div>
+
+                    <!-- Bên phải: Thông tin chi tiết -->
+                    <div class="movie-text-content">
+                        <h1 class="movie-title-header">THANH GƯƠM DIỆT QUỶ: VÔ HẠN THÀNH</h1>
+
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Thể Loại:</span>
+                                <span class="info-value">Hành động, Phiêu lưu, Hoạt hình</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Thời Lượng:</span>
+                                <span class="info-value">120 Phút</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Khởi Chiếu:</span>
+                                <span class="info-value">12/08/2026</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Ngôn Ngữ:</span>
+                                <span class="info-value">Nhật Bản (Phụ đề Tiếng Việt)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Độ Tuổi:</span>
+                                <span class="info-value warning-text">T13 - Cấm khán giả dưới 13 tuổi</span>
+                            </div>
+                        </div>
+
+                        <div class="movie-description">
+                            <h3 class="desc-title">MÔ TẢ NỘI DUNG</h3>
+                            <p class="desc-text">
+                                Tiếp nối những sự kiện kịch tính, các kiếm sĩ diệt quỷ bước vào trận chiến cuối cùng
+                                tại Vô Hạn Thành để đối đầu với chúa quỷ Muzan Kibutsuji...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seat-map-wrapper">
+
+                <!-- Screen -->
+                <div class="screen-area">
+                    <div class="screen-bar"></div>
+                    <span class="screen-label">M À N &nbsp; H Ì N H</span>
+                </div>
+
+                <div class="seats-layout">
+
+                    <!-- ── Hàng A ── -->
+                    <div class="seat-row">
+                        <div class="row-id">A</div>
+                        <div class="row-seats">
+                            <div class="seat std"><span class="seat-label">A1</span></div>
+                            <div class="seat std"><span class="seat-label">A2</span></div>
+                            <div class="seat std"><span class="seat-label">A3</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">A5</span></div>
+                            <div class="seat std"><span class="seat-label">A6</span></div>
+                            <div class="seat std"><span class="seat-label">A7</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">A9</span></div>
+                            <div class="seat std"><span class="seat-label">A10</span></div>
+                            <div class="seat std"><span class="seat-label">A11</span></div>
+                            <div class="seat std"><span class="seat-label">A12</span></div>
+                        </div>
+                        <div class="row-id">A</div>
+                    </div>
+
+                    <!-- ── Hàng B ── -->
+                    <div class="seat-row">
+                        <div class="row-id">B</div>
+                        <div class="row-seats">
+                            <div class="seat std"><span class="seat-label">B1</span></div>
+                            <div class="seat std"><span class="seat-label">B2</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">B5</span></div>
+                            <div class="seat std"><span class="seat-label">B6</span></div>
+                            <div class="seat std"><span class="seat-label">B7</span></div>
+                            <div class="seat std"><span class="seat-label">B8</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">B10</span></div>
+                            <div class="seat std"><span class="seat-label">B11</span></div>
+                            <div class="seat std"><span class="seat-label">B12</span></div>
+                        </div>
+                        <div class="row-id">B</div>
+                    </div>
+
+                    <!-- ── Hàng C ── -->
+                    <div class="seat-row">
+                        <div class="row-id">C</div>
+                        <div class="row-seats">
+                            <div class="seat std"><span class="seat-label">C1</span></div>
+                            <div class="seat std"><span class="seat-label">C2</span></div>
+                            <div class="seat std"><span class="seat-label">C3</span></div>
+                            <div class="seat std"><span class="seat-label">C4</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">C7</span></div>
+                            <div class="seat std"><span class="seat-label">C8</span></div>
+                            <div class="seat std"><span class="seat-label">C9</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">C11</span></div>
+                            <div class="seat std"><span class="seat-label">C12</span></div>
+                        </div>
+                        <div class="row-id">C</div>
+                    </div>
+
+                    <!-- VIP divider -->
+                    <div class="section-divider"><span>— VIP —</span></div>
+
+                    <!-- ── Hàng D (VIP) ── -->
+                    <div class="seat-row">
+                        <div class="row-id">D</div>
+                        <div class="row-seats">
+                            <div class="seat standard">D1</div>
+                            <div class="seat standard">D2</div>
+                            <div class="seat standard">D3</div>
+                            <div class="seat standard">D4</div>
+                            <div class="seat standard">D5</div>
+                            <div class="seat standard">D6</div>
+                            <div class="seat standard">D7</div>
+                            <div class="seat standard">D8</div>
+                            <div class="seat standard">D9</div>
+                            <div class="seat standard">D10</div>
+                            <div class="seat standard">D11</div>
+                            <div class="seat standard">D12</div>
+                        </div>
+                        <div class="row-id">D</div>
+                    </div>
+
+                    <!-- ── Hàng E (VIP) ── -->
+                    <div class="seat-row">
+                        <div class="row-id">E</div>
+                        <div class="row-seats">
+                            <div class="seat standard">E1</div>
+                            <div class="seat standard">E2</div>
+                            <div class="seat standard">E3</div>
+                            <div class="seat vip">E4</div>
+                            <div class="seat vip sel">E5</div>
+                            <div class="seat vip sel">E6</div>
+                            <div class="seat vip sel">E7</div>
+                            <div class="seat vip sel">E8</div>
+                            <div class="seat vip">E9</div>
+                            <div class="seat standard">E10</div>
+                            <div class="seat standard">E11</div>
+                            <div class="seat standard">E12</div>
+                        </div>
+                        <div class="row-id">E</div>
+                    </div>
+
+                    <!-- ── Hàng F (VIP) ── -->
+                    <div class="seat-row">
+                        <div class="row-id">F</div>
+                        <div class="row-seats">
+                            <div class="seat standard">F1</div>
+                            <div class="seat standard">F2</div>
+                            <div class="seat standard">F3</div>
+                            <div class="seat vip">F4</div>
+                            <div class="seat vip">F5</div>
+                            <div class="seat vip">F6</div>
+                            <div class="seat vip">F7</div>
+                            <div class="seat vip">F8</div>
+                            <div class="seat vip">F9</div>
+                            <div class="seat standard">F10</div>
+                            <div class="seat standard">F11</div>
+                            <div class="seat standard">F12</div>
+                        </div>
+                        <div class="row-id">F</div>
+                    </div>
+
+                    <!-- ── Hàng G ── -->
+                    <div class="seat-row">
+                        <div class="row-id">G</div>
+                        <div class="row-seats">
+                            <div class="seat std"><span class="seat-label">G1</span></div>
+                            <div class="seat std"><span class="seat-label">G2</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">G4</span></div>
+                            <div class="seat std"><span class="seat-label">G5</span></div>
+                            <div class="seat std"><span class="seat-label">G6</span></div>
+                            <div class="seat std"><span class="seat-label">G7</span></div>
+                            <div class="seat booked"></div>
+                            <div class="seat std"><span class="seat-label">G9</span></div>
+                            <div class="seat std"><span class="seat-label">G10</span></div>
+                            <div class="seat std"><span class="seat-label">G11</span></div>
+                            <div class="seat std"><span class="seat-label">G12</span></div>
+                        </div>
+                        <div class="row-id">G</div>
+                    </div>
+
+                    <!-- Ghế Đôi divider -->
+                    <div class="section-divider double"><span>— Ghế Đôi —</span></div>
+
+                    <!-- ── Hàng H (Double) ── -->
+                    <div class="seat-row">
+                        <div class="row-id">H</div>
+                        <div class="row-seats">
+                            <div class="seat dbl"><span class="seat-label">H1 ∘ H2</span></div>
+                            <div class="seat dbl booked"></div>
+                            <div class="seat dbl"><span class="seat-label">H5 ∘ H6</span></div>
+                            <div class="seat dbl"><span class="seat-label">H7 ∘ H8</span></div>
+                            <div class="seat dbl booked"></div>
+                            <div class="seat dbl"><span class="seat-label">H11 ∘ H12</span></div>
+                        </div>
+                        <div class="row-id">H</div>
+                    </div>
+
+                </div><!-- /seats-layout -->
+
+                <!-- ── Legend ── -->
+                <div class="legend">
+                    <div class="leg-item">
+                        <div class="leg-box std"></div><span>Ghế Thường</span>
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-box vip"></div><span>Ghế VIP</span>
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-box dbl"></div><span>Ghế Đôi</span>
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-box sel"></div><span>Ghế Chọn</span>
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-box bkd"></div><span>Đã Đặt</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="price-box" id="price-box">
+                <h2 class="box-title">Giá Vé</h2>
+                <div class="price-content">
+                    <div class="ticket-price-row">
+                        <div class="price-item-static">
+                            <span class="status-dot standard"></span>
+                            <span class="ticket-label">Ghế thường</span>
+                            <span class="ticket-value">45.000VND</span>
+                        </div>
+                        <div class="price-item-static">
+                            <span class="status-dot vip"></span>
+                            <span class="ticket-label">Ghế VIP</span>
+                            <span class="ticket-value">70.000VND</span>
+                        </div>
+                        <div class="price-item-static">
+                            <span class="status-dot double"></span>
+                            <span class="ticket-label">Ghế đôi</span>
+                            <span class="ticket-value">125.000VND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <aside class="order-summary" id="order-summary">
+            <div class="summary-card">
+                <h2 class="summary-title">Thông Tin Đặt Vé</h2>
+
+                <!-- Thông tin phim -->
+                <div class="summary-movie">
+                    <img src="../../assets/images/Akaza Vô hạn thành.jpg" alt="Poster" class="summary-poster">
+                    <div class="summary-movie-info">
+                        <p class="summary-movie-name">THANH GƯƠM DIỆT QUỶ: VÔ HẠN THÀNH</p>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="summary-divider"></div>
+
+                <!-- Chi tiết suất chiếu -->
+                <div class="summary-detail-group">
+                    <div class="summary-detail-row">
+                        <div class="summary-detail-text">
+                            <span class="summary-detail-label">Rạp chiếu</span>
+                            <span class="summary-detail-value">Cinestar Huế</span>
+                        </div>
+                    </div>
+                    <div class="summary-detail-row">
+                        <div class="summary-detail-text">
+                            <span class="summary-detail-label">Ngày chiếu</span>
+                            <span class="summary-detail-value">12/08/2026</span>
+                        </div>
+                    </div>
+                    <div class="summary-detail-row">
+                        <div class="summary-detail-text">
+                            <span class="summary-detail-label">Suất chiếu</span>
+                            <span class="summary-detail-value highlight">19:30 – 21:30</span>
+                        </div>
+                    </div>
+                    <div class="summary-detail-row">
+                        <div class="summary-detail-text">
+                            <span class="summary-detail-label">Phòng chiếu</span>
+                            <span class="summary-detail-value">Phòng 3 – 2D Phụ đề</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="summary-divider"></div>
+
+                <!-- Ghế đã chọn -->
+                <div class="summary-seats-section">
+                    <p class="summary-section-label">Ghế đã chọn</p>
+                    <div class="summary-seats-tags">
+                        <span class="seat-tag vip">E5</span>
+                        <span class="seat-tag vip">E6</span>
+                        <span class="seat-tag vip">E7</span>
+                        <span class="seat-tag vip">E8</span>
+                    </div>
+                    <p class="summary-seat-type">4 ghế VIP</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="summary-divider"></div>
+
+                <!-- Bảng tính tiền -->
+                <div class="summary-price-breakdown">
+                    <div class="summary-price-row">
+                        <span class="summary-price-label">Ghế VIP × 4</span>
+                        <span class="summary-price-val">280.000đ</span>
+                    </div>
+                    <div class="summary-price-row">
+                        <span class="summary-price-label">Phí dịch vụ</span>
+                        <span class="summary-price-val">0đ</span>
+                    </div>
+                </div>
+
+                <!-- Tổng tiền -->
+                <div class="summary-total">
+                    <span class="summary-total-label">Tổng cộng</span>
+                    <span class="summary-total-value">280.000đ</span>
+                </div>
+
+                <!-- Nút tiếp tục -->
+                <button class="summary-btn-continue" id="btn-continue">Tiếp Tục</button>
+
+                <p class="summary-note">* Vé đã mua không được hoàn trả</p>
+            </div>
+        </aside>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>
-</body></html>
+</body>
+
+</html>
