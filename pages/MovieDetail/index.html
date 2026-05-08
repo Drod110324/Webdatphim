@@ -82,7 +82,9 @@
     <div class="trailer-modal" id="trailerModal">
         <div class="trailer-container">
             <button class="close-modal" id="closeTrailer" aria-label="Đóng trailer">×</button>
-            <iframe width="1396" height="785" src="https://www.youtube.com/embed/wPFeBxt7VXI" title="Demon Slayer: Kimetsu no Yaiba Infinity Castle | MAIN TRAILER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <video width="100%" height="100%" controls>
+                <source src="../../assets/videos/trailer.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
     <div id="footer-placeholder"></div>
@@ -92,6 +94,7 @@
         const trailerBtn = document.getElementById('trailerBtn');
         const trailerModal = document.getElementById('trailerModal');
         const closeTrailer = document.getElementById('closeTrailer');
+        const videoElement = trailerModal?.querySelector('video');
 
         trailerBtn?.addEventListener('click', () => {
             trailerModal.classList.add('active');
@@ -99,11 +102,13 @@
 
         closeTrailer?.addEventListener('click', () => {
             trailerModal.classList.remove('active');
+            if (videoElement) videoElement.pause();
         });
 
         trailerModal?.addEventListener('click', event => {
             if (event.target === trailerModal) {
                 trailerModal.classList.remove('active');
+                if (videoElement) videoElement.pause();
             }
         });
     </script>
