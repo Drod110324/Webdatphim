@@ -7,6 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../HomePage/style.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .trailer-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .trailer-modal.active {
+            display: flex;
+        }
+        .trailer-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .close-modal {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            color: #000;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -15,10 +57,10 @@
             <div class="banner-overlay"></div>
             <div class="container movie-info-wrapper">
                 <div class="movie-poster">
-                    <img src="https://via.placeholder.com/300x450" alt="Poster phim">
+                    <img src="../../assets/images/Akaza Vô hạn thành.jpg" alt="Poster phim">
                 </div>
                 <div class="movie-details">
-                    <h1 class="movie-title">Tên Phim </h1>
+                    <h1 class="movie-title">Demon Slayer: Kimetsu no Yaiba Infinity Castle </h1>
                     <div class="movie-meta">
                         <span class="genre">Thể loại</span>
                         <span class="duration">120 phút</span>
@@ -31,14 +73,39 @@
                         <a href="../BookingSeat/index.html" style="text-decoration: none;">
                             <button class="btn btn-primary">Đặt Vé Ngay</button>
                         </a>
-                        <button class="btn btn-outline">Xem Trailer</button>
+                        <button class="btn btn-outline" id="trailerBtn">Xem Trailer</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <div class="trailer-modal" id="trailerModal">
+        <div class="trailer-container">
+            <button class="close-modal" id="closeTrailer" aria-label="Đóng trailer">×</button>
+            <iframe width="1396" height="785" src="https://www.youtube.com/embed/x7uLutVRBfI" title="Demon Slayer: Kimetsu no Yaiba Infinity Castle | MAIN TRAILER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
     <div id="footer-placeholder"></div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script>
+        const trailerBtn = document.getElementById('trailerBtn');
+        const trailerModal = document.getElementById('trailerModal');
+        const closeTrailer = document.getElementById('closeTrailer');
+
+        trailerBtn?.addEventListener('click', () => {
+            trailerModal.classList.add('active');
+        });
+
+        closeTrailer?.addEventListener('click', () => {
+            trailerModal.classList.remove('active');
+        });
+
+        trailerModal?.addEventListener('click', event => {
+            if (event.target === trailerModal) {
+                trailerModal.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
