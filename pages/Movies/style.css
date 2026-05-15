@@ -1,4 +1,3 @@
-/* Global Styles */
 :root {
     --purple-main: #4b2082;
     --purple-light: #7b3eb8;
@@ -38,7 +37,6 @@ main {
     min-height: 80vh;
 }
 
-/* Movie Filter Bar */
 .movie-filters {
     background-color: #0b0f1a;
     padding: 20px 0;
@@ -86,7 +84,6 @@ main {
     border-color: #f3ea28;
 }
 
-/* Button Lọc Phim */
 .btn-filter-apply {
     background-color: #f3ea28;
     color: #000;
@@ -107,7 +104,6 @@ main {
     transform: translateY(-1px);
 }
 
-/* Movie Tabs */
 .movie-tabs {
     display: flex;
     justify-content: center;
@@ -159,7 +155,6 @@ main {
     display: block;
 }
 
-/* Movie Card Container */
 .movie-item {
     display: flex;
     flex-direction: column;
@@ -169,7 +164,6 @@ main {
     transition: transform 0.3s ease;
 }
 
-/* Movie Card Image */
 .movie-card {
     position: relative;
     padding: 0;
@@ -202,7 +196,6 @@ main {
     transition: transform 0.5s ease;
 }
 
-/* Movie Badges (2D, Age) */
 .movie-badges {
     position: absolute;
     top: 0;
@@ -217,36 +210,17 @@ main {
     opacity: 0;
 }
 
-.badge-2d {
-    background-color: #fbbd33;
-    padding: 4px;
+.badge-status {
+    background-color: var(--purple-main);
+    color: white;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-}
-
-.badge-2d span {
-    border: 2px solid #000;
-    color: #000;
-    font-weight: 800;
-    padding: 1px 4px;
-    font-size: 0.6rem;
-    border-radius: 4px;
-    line-height: 1;
-    display: inline-block;
-    transform: scaleY(1.4);
-}
-
-.badge-t16 {
-    background-color: #ff0033;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 0;
-    width: 60px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 34px; /* Align with design */
 }
 
 .t16-text {
@@ -266,7 +240,6 @@ main {
     text-transform: uppercase;
 }
 
-/* Movie Hover Overlay */
 .movie-overlay {
     position: absolute;
     top: 0;
@@ -304,13 +277,32 @@ main {
     transform: translateY(0);
 }
 
+.overlay-id {
+    color: var(--c-primary);
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.overlay-id::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background-color: var(--c-primary);
+}
+
 .overlay-title {
     color: white;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
     padding-bottom: 0;
+    line-height: 1.3;
 }
 
 .overlay-meta {
@@ -332,7 +324,6 @@ main {
     color: #eaff00;
 }
 
-/* Movie Info Bottom */
 .movie-info-bottom {
     padding: 15px 0 0 0;
     background: transparent;
@@ -372,7 +363,6 @@ main {
     gap: 10px;
 }
 
-/* Button Trailer */
 .btn-trailer-bottom {
     display: flex;
     align-items: center;
@@ -393,7 +383,6 @@ main {
     color: white;
 }
 
-/* Button Đặt Vé */
 .btn-book-bottom {
     background-color: #eaff00;
     color: #000;
@@ -414,7 +403,6 @@ main {
     opacity: 0.9;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
