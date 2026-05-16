@@ -1,0 +1,226 @@
+.promo-page {
+    padding-bottom: 60px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.promo-hero {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    background-image: url('../../assets/images/cinema_promo_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(234, 255, 0, 0.2);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6, 5, 10, 0.7), rgba(6, 5, 10, 1));
+}
+
+.promo-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.promo-hero-content h1 {
+    font-size: 3rem;
+    color: var(--c-primary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(234, 255, 0, 0.3);
+}
+
+.promo-hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+
+
+/* Promo Grid */
+.promo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Promo Card */
+.promo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--c-primary);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(234, 255, 0, 0.1);
+}
+
+.promo-image {
+    width: 350px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.promo-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 50%, var(--bg-card) 100%);
+}
+
+.promo-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--c-primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border: 1px solid var(--c-primary);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.promo-badge.hot {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--c-danger);
+    border-color: var(--c-danger);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.promo-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.promo-title {
+    color: var(--c-primary);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-family: Arial, sans-serif;
+}
+
+.promo-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.promo-details {
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.detail-section {
+    margin-bottom: 15px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 5px;
+}
+
+.detail-section h4 svg {
+    color: var(--c-primary);
+}
+
+.detail-section ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.detail-section li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.detail-section li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--c-primary);
+}
+
+.detail-section li strong {
+    color: var(--text-secondary);
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Container Utility if not in global */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promo-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .promo-card {
+        flex-direction: column;
+    }
+    
+    .promo-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .promo-image::after {
+        background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%);
+    }
+}

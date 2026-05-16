@@ -1,7 +1,4 @@
-/**
- * Dữ liệu mẫu danh sách phim
- * Bao gồm các mục: Phim đang chiếu, Phim sắp chiếu, Suất chiếu sớm
- */
+
 const movieData = {
     'now-showing': [
         {
@@ -78,7 +75,7 @@ const movieData = {
         }
     ]
 };
-
+console.log(movieData);
 // Khai báo các phần tử DOM cho bộ lọc
 const filterCategory = document.getElementById('filter-category');
 const filterTime = document.getElementById('filter-time');
@@ -109,6 +106,7 @@ function populateCategoryFilter() {
             // Tách các thể loại nếu một phim có nhiều thể loại (cách nhau bằng dấu phẩy)
             const cats = movie.category.split(',').map(c => c.trim());
             cats.forEach(c => allCategories.add(c));
+            console.log(cats);
         });
     });
 
